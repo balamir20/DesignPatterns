@@ -1,4 +1,6 @@
 
+
+
 # Design Patterns - Tasarım Kalıpları
 
 "Öğrenmenin en iyi yolu, başkalarına öğretebilmektir." felsefesiyle dilimin döndüğü kadarıyla bir şeyler karalamak istedim. **Tasarım kalıpları**, yazılım tasarımında yaygın olarak ortaya çıkan sorunlara karşı getirilen tipik çözümlerdir. Belki de farkında olmadan birçoğunu kullanıyoruz veya yeri geldiğinde kullan(a)mıyoruz.
@@ -52,7 +54,7 @@ Oluşturulan nesneler, en uygun ve verimli bir şekilde nasıl yaratılır sorus
 
 <h4 id="abstractFactory">Abstract Factory</h4>
 
-> Factory pattern ile abstract factory pattern arasındaki farkı açıklayarak açıklayamaya çalışayım. 
+> Factory pattern ile abstract factory pattern arasındaki farkı açıklayamaya çalışayım. 
 > Factory tek bir nesnenin, abstract factory ise birden fazla nesnenin yaratılması için arayüz sağlar.
 > Abstract factory sınıftır. Factory method ise adından da anlaşılacağı üzerine metottur.
 > Birden fazla ürün ile çalışmak zorunda olduğumuz durumlarda, istemciyi soyutlamak için abstract factory kullanabiliriz. Bu demek oluyor ki abstract factory birden fazla factory methoda sahiptir.
@@ -72,3 +74,22 @@ Nesnelerin birbirleriyle nasıl birleşecekleri, daha büyük yapılar oluşturm
 * [Decorator](#decorator)
 * [Bridge](#bridge)
  
+<h4 id="flyweight">Flyweight</h4>
+
+> Bir örnekle açıklamaya çalışayım. Bir oyunda kullandığımız bomba, şarapnel, füze, mermi gibi nesneleri düşünün bunları her seferinde newleyerek kullanırsak bize CPU problemi olarak geri döner. Nesneleri oluşturmak ve sonrasında Garbage Collector ile toplamak kullanmak çok maliyetli olacaktır. Yani sık kullanılan çok sayıdaki benzer nesnelerin bellek tüketimini optimize etmek için kullanılan desendir. 
+
+<h4 id="adapter">Adapter</h4>
+
+> Birbirleriyle uyumsuz arayüzlere sahip olan nesnelerin işbirliği yapabilmesine olanak sağlayan kalıptır. Bir sınıfın arayüzünü başka bir sınıfın beklediği arayüze çevirir. Örneğin bazı ülkelerin elektrik prizleri ülkemizdekilerden farklıdır. O prizlere elektronik cihazlarımızı bağlayamayız. Duvardaki prizi değiştiremeyeceğimize göre, duvardaki prizin beklediği şekilde bir arayüz sağlamalıyız bunun için de bir adaptöre ihtiyacımız var. Aynı durum yazdığımız kodlar için de geçerli. Uyumsuz arayüz sorununu ortadan kaldırmak için adapter kalıbını uygulamak yerine kodumuzda değişiklik yaparsak SOLID prensiplerinden Open/Closed prensibini ihlal etmiş oluruz.
+ 
+ <h4 id="composite">Composite</h4>
+
+> Nesneleri ağaç yapısı halinde düzenleyip, ardından bu nesneler arasında alt üst ilişkisi kurarak hiyerarşik bir yapı kurmamızı sağlar. Parça-bütün ilişkisi olan yerlerde kullabiliriz. Orduda generalden ere kadar bir çok rütbe vardır. Aslında baktığımızda temelde hepsi de birer askerdir. 
+
+<h4 id="facade">Facade</h4>
+ 
+> Facade karmaşık bir sistemi organize ederek istemciye basit arayüzler vermeyi amaçlar. Sistemleri parçalayarak onları alt sistemlere bölmek, alt sistemlerdeki curcunayı soyutlayarak basit bir arayüz vermeyi hedefler. Facade var olan nesneler için yeni bir arayüz ortaya koyarken [Adapter](#adapter) var olan arayüzü kullabilir hale getirmeye çalışır. Bir yeri aradığınızda görüşmek istediğiniz departmanın/kişinin dahili numarasını bilmiyor olabilirsiniz. Karşınıza çıkan operatör sizi istediğiniz yere yönlendirerek dahili numaraları bilme zorunluluğunuzu ortadan kaldırır.	
+
+<h4 id="proxy">Proxy</h4>
+
+> Dilimize vekil olarak geçen proxy kalıbına örnek vererek açıklamak istiyorum. Diyelim ki davalık olduk. Hukuki işlemleri tek başımıza yapmamız çok teferruatlı ve karışık olduğu için bizim adımıza bu işleri halledebilecek bir avukata vekaletimizi veririz. O bizim yerimize gereken yerlerde gerekli işleri halledip bize haber verir.
